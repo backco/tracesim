@@ -1,4 +1,4 @@
-Evaluation framework for trace similarity metrics. Setup is tested on linux systems, but should be straightforward using utilities listed below.
+Framework for implementing and evaluating trace similarity metrics. Setup is tested on linux systems, but should be straightforward using utilities listed below.
 
 ## Prerequisites
 
