@@ -10,7 +10,7 @@ Evaluation framework for trace similarity metrics. Setup is tested on linux syst
 
 ### Clone repo:
 
-```git clone git@github.com/backco/evalumetric.git```
+```git clone git@github.com:backco/tracesim.git```
 
 ### Extract event logs:
 
