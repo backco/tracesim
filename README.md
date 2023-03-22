@@ -1,4 +1,3 @@
-# evalumetric
 Evaluation framework for trace similarity metrics. Setup is tested on linux systems, but should be straightforward using utilities listed below.
 
 ## Prerequisites
@@ -24,12 +23,9 @@ tar -xf logs.tar
 
 Note: argument order plays no role. Experiments will be run for the Cartesian product of event logs, similarity metrics, and evaluation measures. That is, for every log listed, every similarity metric listed will be evaluated with respect to every evaluation measure listed.
 
-#### Option 1 (most straightforward) - Run directly with Maven:
+#### Run directly with Maven:
 
 ```mvn compile exec:java -Dexec.mainClass="com.co.back.evalumetric.EvalumetricMain" -Dexec.args="--input=<PATHS-TO-EVENT-LOGS> --output=<OUTPUT-FILE> <SIMILARITY-METRICS> <EVALUATION-MEASURES>"```
-
-#### Option 2 (faster startup) - Build jar with Maven, run with Java:
-
 
 ## Arguments
 
@@ -84,4 +80,4 @@ Run all experiments for the Artificial Photo Copier Event Log. Sample ratio of 1
 
 Implementation of generic edit distance has been omitted from this repository due to licensing restrictions, but can be found at:
 
-Note that running all experiments with the sample ratios reported in the paper is very resource and time intensive. g
+Note that running all experiments with the sample ratios reported in the paper is very resource and time intensive.
