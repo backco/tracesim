@@ -71,7 +71,7 @@ For all evaluation measures, `sample=` should be a value between 0.0 and 1.0.
 
 ## Examples
 
-Run all experiments for the Artificial Photo Copier Event Log. Sample ratio of 1.0 for all evaluation measures, i.e. sample the entire logs, all possible triplets:
+Run all experiments for the Artificial Photo Copier Event Log. Sample ratio of 1.0 for all evaluation measures, i.e. sample the entire log, all possible triplets:
 
 ```mvn compile exec:java -Dexec.mainClass="com.co.back.evalumetric.EvalumetricMain" -Dexec.args="--input=/root/evalumetric/logs/Photocopier/Photocopier.xes --ngramcosine:n=1 --ngramcosine:n=2 --ngramcosine:n=3 --ngrameuclidean:n=1 --ngrameuclidean:n=2 --ngrameuclidean:n=3  --editlevenshtein --editlevenshteinnorm --alignmentnw --alignmentnwf1 --eventuallyfollowsdelias --mrcosine --mreuclidean --smrcosine --smreuclidean --nsmrcosine --nsmreuclidean --precisionatk:k=1,sample=1.0 --precisionatk:k=10,sample=1.0 --silhouette:sample=1.0 --tripletbased:sample=1.0 --output=output.txt"```
 
