@@ -23,7 +23,7 @@ public class Embeddings {
     private static ConcurrentMap<RelationalTrace<XEvent, ?>, ConcurrentMap<String, BigDecimal>>               cachedEmbeddingsBOActBin = new ConcurrentHashMap<>();
     private static ConcurrentMap<RelationalTrace<XEvent, ?>, ConcurrentMap<Pair<String, String>, BigDecimal>> cachedEmbeddingsDFG      = new ConcurrentHashMap<>();
     private static ConcurrentMap<String, ConcurrentMap<String, Integer>>                                      cachedEmbeddingsEF       = new ConcurrentHashMap<>();
-    private static ConcurrentMap<RelationalTrace<XEvent, ?>, ConcurrentMap<String, BigDecimal>>               cachedEmbeddingsNGram    = new ConcurrentHashMap<>();
+    private static ConcurrentMap<Integer, ConcurrentMap<RelationalTrace<XEvent, ?>, ConcurrentMap<String, BigDecimal>>>               cachedEmbeddingsNGram    = new ConcurrentHashMap<>();
     private static ConcurrentMap<RelationalTrace<XEvent, ?>, ConcurrentMap<String, BigDecimal>>               cachedEmbeddingsNGramAll = new ConcurrentHashMap<>();
     private static ConcurrentMap<RelationalTrace<XEvent, ?>, ConcurrentMap<String, BigDecimal>>               cachedEmbeddingsMR       = new ConcurrentHashMap<>();
     private static ConcurrentMap<RelationalTrace<XEvent, ?>, ConcurrentMap<String, BigDecimal>>               cachedEmbeddingsNSMR     = new ConcurrentHashMap<>();
@@ -250,7 +250,7 @@ public class Embeddings {
 
 	final String eventClassifier = t.getEventClassifier();
 
-	return cachedEmbeddingsNGram.computeIfAbsent(t, f -> {
+	return cachedEmbeddingsNGram.computeIfAbsent(n, g -> new ConcurrentHashMap<>()).computeIfAbsent(t, f -> {
 
 	    final ConcurrentMap<String, BigDecimal> result = new ConcurrentHashMap<>();
 
