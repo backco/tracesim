@@ -87,7 +87,7 @@ public class Silhouette extends Loss {
 								distMean = distMean.add(res);
 							}
 							//).reduce(BigDecimal.ZERO, BigDecimal::add).divide(new BigDecimal(sample.get(otherCls).size()), 8, RoundingMode.HALF_UP);
-							b = b == null || b.compareTo(distMean) == 0 ? distMean : b;
+							b = b == null || b.compareTo(distMean) > 0 ? distMean : b;
 						}
 					}
 			    }
